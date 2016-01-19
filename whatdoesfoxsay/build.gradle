@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
+def releaseVersionName = new Version(major: 1, minor: 0, revision: 3) // make sure to bump this up with each release to jcenter
+def releaseVersionCode = 1 // update for new versions of app in play store (prob none for a lib)
+
 def siteUrl = 'https://github.com/thoughtbot/whatdoesthefoxsay'
 def gitUrl = 'https://github.com/thoughtbot/whatdoesthefoxsay.git'
-
-group = 'com.thoughtbot.whatdoesfoxsay'
-def repoVersion = '1.0.2' // make sure to bump this up with each release
 
 android {
     compileSdkVersion 23
@@ -15,8 +15,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 1
-        versionName repoVersion
+        versionCode releaseVersionCode
+        versionName releaseVersionName.toString()
     }
     buildTypes {
         release {
@@ -43,8 +43,8 @@ bintray {
         licenses = ["MIT"]
         publish = true
         version {
-            name = repoVersion
-            vcsTag = repoVersion
+            name = releaseVersionName.toString()
+            vcsTag = releaseVersionName.toString()
         }
     }
 }
@@ -110,4 +110,12 @@ artifacts {
 
 task findConventions << {
     println project.getConvention()
+}
+
+class Version {
+    int major, minor, revision
+
+    String toString() {
+        "$major.$minor.$revision"
+    }
 }
