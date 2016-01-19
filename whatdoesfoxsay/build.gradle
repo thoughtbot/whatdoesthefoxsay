@@ -35,9 +35,9 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        userOrg = "thecodeviking"
-        repo = "vikinglibrary"
-        name = "whatdoesthefoxsay"
+        userOrg = "thoughtbot"
+        repo = "Android-Lib"
+        name = "WhatDoesTheFoxSay"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["MIT"]
