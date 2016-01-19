@@ -16,7 +16,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -35,13 +35,17 @@ bintray {
 
     configurations = ['archives']
     pkg {
+        userOrg = "thecodeviking"
         repo = "vikinglibrary"
         name = "whatdoesthefoxsay"
-        userOrg = 'thecodeviking'
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["MIT"]
         publish = true
+        version {
+            name = '1.0.1'
+            vcsTag = '1.0.1'
+        }
     }
 }
 
@@ -50,7 +54,8 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'A simple library which allows you to create different Animal classes and query for what they say'
+                name 'WhatDoestheFoxSay'
+                description 'A simple library which allows you to create different Animal classes and query for what they say'
                 url siteUrl
                 licenses {
                     license {
