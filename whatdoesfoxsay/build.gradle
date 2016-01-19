@@ -6,7 +6,7 @@ def siteUrl = 'https://github.com/thoughtbot/whatdoesthefoxsay'
 def gitUrl = 'https://github.com/thoughtbot/whatdoesthefoxsay.git'
 
 group = 'com.thoughtbot.whatdoesfoxsay'
-def repoVersion = '1.0.1' // make sure to bump this up with each release
+def repoVersion = '1.0.2' // make sure to bump this up with each release
 
 android {
     compileSdkVersion 23
