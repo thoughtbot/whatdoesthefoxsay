@@ -2,11 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def releaseVersionName = new Version(major: 1, minor: 0, revision: 3) // make sure to bump this up with each release to jcenter
+def releaseVersionName = new Version(major: 1, minor: 0, revision: 4) // make sure to bump this up with each release to jcenter
 def releaseVersionCode = 1 // update for new versions of app in play store (prob none for a lib)
 
 def siteUrl = 'https://github.com/thoughtbot/whatdoesthefoxsay'
 def gitUrl = 'https://github.com/thoughtbot/whatdoesthefoxsay.git'
+
+group = 'com.thoughtbot'
+version = releaseVersionName.toString()
 
 android {
     compileSdkVersion 23
